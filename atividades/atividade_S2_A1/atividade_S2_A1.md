@@ -80,3 +80,86 @@
 
     O comentário deve ser usado sempre que o código não estiver autoexplicativo
 
+    ## Aula 4 - Variáveis, Constantes e Literais
+
+     A variável é um local de armazenamento de dados ou local que indica onde os dados estão sendo guardados, funcionando como um indicador ( ponteiro )
+     Em algumas linguagens como C , é necessário falar qual o tipo da variável, no python não é necessário pois ele faz a inferência do tipo automaticamente.
+
+     ```python3
+     numero = 10
+     print(numero, type(numero))
+     # retorna
+     10 <class 'int'>
+     ```
+     O python também aceita tipagem dinâmica e também pode alterar valores já dentro de uma variável
+     ```python3
+     valor_inicial = 10
+     valor_inicial = 20
+     print(valor_inicial)
+     # vai imprimir o valor de 20
+     20
+     ```
+     O python também consegue identificar múltiplas atribuições
+     ```python3
+     maria, idade, endereco = "maria", 20, "Rua 10 numero 1"
+     print(maria)
+     maria
+     print(idade)
+     20
+     print(endereco)
+     Rua 10 numero 1
+     ```
+     Atribuição do mesmo valor para múltiplas variáveis
+     ```
+     nome1 = nome2 = nome3 = "João"
+     # todas as variáveis terão "João" como seu valor armazenado
+     ```
+    Notação de variáveis compostas usando o snake_case
+    ```
+    idfuncionario = 1234
+    id_funcionario = 1234 # uso do snake_case que é o padrão da pep8
+    ```
+    As constantes em python sempre são maiúsculas mesmo em upper case
+
+    Os literais em python são os dados sem necessidade de ter uma variável junto dele
+    ```python3
+    # literais
+    print(27)  # 27 é o literal
+    IDADE = 27
+    print(IDADE, type(IDADE))  # type mostra o tipo da variável ou do literal
+    ```
+
+    Outros tipos em python 
+    ```python3
+    # Strings
+    NOME = "Maria da Silva"
+    print(maria, type(maria))
+
+    # Booleano
+    print(True, type(True))
+    print(False, type(False))
+
+    # None
+    print(None, type(None))
+
+    # Coleções
+    
+    # Lista
+    numeros = [1, 2, 3]
+    print(numeros, type(numeros))
+
+    # Tupla(tuple)
+    emails = ('joao@mail.com', 'maria@mail.com')
+    print(emails, type(emails))
+
+    # Conjunto (set)
+    nomes = {'maria', 'maria', 'joao', 'pedro', 'maria', 'Pedro'}
+    print(nomes, type(nomes))
+
+    # Dicionário (dictionary)
+    aluno = {
+        'prontuario': 1234,
+        'nome': 'Maria da Silva',
+        'idade': 34
+    }
+    print(aluno, type(aluno))
