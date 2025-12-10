@@ -16,4 +16,13 @@
         mkdir estudo-python
 
     ```
+    3. Criação da pasta ./estudo-python/src , usando o vscodium gui
 
+    4. Instalação das extensões 
+    |  Nome da extensão  | funcionalidade  |
+    | :---               | :---            |
+    |  ms-python         |  extensão para utilizar o python no vscodium  |
+    |  pylint            |  extensão para boas práticas da linguagem     |
+    |  autopep8          |  extensão de condutas e normas da linguagem python  |
+
+    5. Upload do projeto para o github
