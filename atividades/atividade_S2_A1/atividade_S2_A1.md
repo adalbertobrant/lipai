@@ -249,4 +249,24 @@
     funcionario['salario'] = 9000.00
     print(funcionario)
     ```
+    ## Aula 6 - Conversão de Tipos
+
+    Existem dois tipos de conversão a implícita e a explícita
+    ```
+    # Conversão de tipo implícito ou explícito
+    LEITURA = 5.53
+    PESO = 3
+    TOTAL = LEITURA * PESO
+    print(TOTAL, type(TOTAL))  # fez a conversão implícita
+
+    # faz a convesão explícita (TYPE CASTING)
+    TOTAL = int(TOTAL)
+
+    print(TOTAL, type(TOTAL))
+
+    # Conversão para string
+
+    TEXTO = 'Maria tem ' + str(TOTAL) + ' unidades '
+    print(TEXTO, type(TEXTO))
+    ```
 
