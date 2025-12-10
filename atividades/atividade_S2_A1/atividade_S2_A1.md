@@ -26,3 +26,40 @@
     |  autopep8          |  extensão de condutas e normas da linguagem python  |
 
     5. Upload do projeto para o github
+
+    ## Aula 02 - Keywords e identificadores
+
+    # Keywords
+      São palavras reservadas apenas utilizadas pelo python e não podem ser utilizadas pelo usuário para a declaração de variáveis e outras funcionalidades 
+      ```
+      # algumas palavras reservadas
+      true, false, none, import, if, lambda
+      ```
+    # Identificadores
+      São as palavras de nome de variáveis, funções, classes,eles são case sensitive ou seja existe diferença entre letras maiusculas ou minúsculas. 
+      Todos os identificadores podem começar com underline _ ou uma letra, não podem ter espaços em branco entre um identificador composto por exemplo:
+      ```python3
+      nome de variável
+      # no caso o certo seria nome_de_variavel
+      nome = 'Maria'
+      idade = 30
+      Nome = 'João'
+      nome_completo = 'Maria da Silva'
+      ```
+      Não se pode usar caracteres especiais nos nomes(identificadores) tais como #, !, @, $
+      Uma boa prática da linguagem é utilizar sempre identificadores claros e que tenham significado para o que a variável está fazendo.
+      Na definição de constantes ou seja variáveis que não mudam o correto é usar letras maiusculas:
+      ```python3
+      PI = 3.14
+      
+      idade = 18
+
+      MAIORIDADE = 18
+
+      if idade >= MAIORIDADE:
+          print('Maior de idade')
+      else:
+          print('Menor de idade')
+      ```
+
+
