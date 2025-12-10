@@ -62,4 +62,21 @@
           print('Menor de idade')
       ```
 
+    ## Aula 3 - Comentários
+
+    Podem ser apenas de uma única linha
+
+    ```
+     # comentário com uma única linha
+    ```
+
+    ```
+    '''
+    Comentários com várias linhas
+    comentários com várias linhas
+    comentários com várias linhas
+    '''
+    ```
+
+    O comentário deve ser usado sempre que o código não estiver autoexplicativo
 
