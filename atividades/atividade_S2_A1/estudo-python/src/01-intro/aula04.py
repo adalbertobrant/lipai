@@ -1,23 +1,23 @@
 """ Aula 04 - Variáveis , Constantes e Literais """
 # variável é um container para guardar dados
 # inferência do tipo
-numero = 10
-print(numero, type(numero))
+NUMERO = 10
+print(NUMERO, type(NUMERO))
 
 # multiplas atribuições
 maria, idade, endereco = "Maria", 20, "Rua 10 numero 1"
 print(f"Nome-> {maria}, Idade-> {idade}, Endereço-> {endereco}")
 
-nome1 = nome2 = nome3 = "João"
-print(nome1, nome2, nome3)
-nome2 = "Pedro"
-print(nome1, nome2, nome3)
+NOME1 = NOME2 = NOME3 = "João"
+print(NOME1, NOME2, NOME3)
+NOME2 = "Pedro"
+print(NOME1, NOME2, NOME3)
 
 # snake_case
 # idfuncionario = 49
-id_funcionario = 49
-salario_atual = 200
-print(id_funcionario, salario_atual)
+ID_FUNCIONARIO = 49
+SALARIO_ATUAL = 200
+print(ID_FUNCIONARIO, SALARIO_ATUAL)
 
 # Constantes
 # Upper case - snake_case
@@ -52,7 +52,8 @@ emails = ('joao@mail.com', 'maria@mail.com')
 print(emails, type(emails))
 
 # Conjunto (set)
-nomes = {'maria', 'maria', 'joao', 'pedro', 'maria', 'Pedro'}
+# nomes = {'maria', 'maria', 'joao', 'pedro', 'maria', 'Pedro'}
+nomes = {'maria', 'joão', 'pedro'}
 print(nomes, type(nomes))
 
 # Dicionário (dictionary)
@@ -62,4 +63,3 @@ aluno = {
     'idade': 34
 }
 print(aluno, type(aluno))
-    
