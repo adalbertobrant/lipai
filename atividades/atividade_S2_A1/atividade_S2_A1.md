@@ -269,4 +269,64 @@
     TEXTO = 'Maria tem ' + str(TOTAL) + ' unidades '
     print(TEXTO, type(TEXTO))
     ```
+    ## Aula 7 - Entradas e Saídas
+
+     A entrada e saída de dados em python trata-se do input e output de dados I/O (aiou).
+
+     Pode-se alterar o padraão da saída do print usando sep o end 
+     ```
+     print('hello world', 'Maria', True, 1, sep=" @ " , end = ' !!!\n ')
+     print('hello world', sep = ' ### ', end = '\n\n\n')
+     ```
+
+     Para salvar o resultado do print dentro de um arquivo podemos fazer assim:
+     ```
+        arquivo = open('saida.txt', 'w',enconding='utf-8') 
+        print("Saida do arquivo para o arquivo saida.txt", file=arquivo)
+     ```
+
+    # Entrada de dados 
+
+    Na entrada de dados em python usamos a palavra reservada input
+
+    ```python3
+
+    nome = input("Digite o seu nome -> ")
+    print(nome.upper())
+    idade = input("Digite a sua idade -> ")
+    print(idade, type(idade))
+    idade = int(input("Digite a sua idade -> "))
+    if idade >= 18:
+        print(f"{nome} é maior de idade!!")
+    else:
+        print(f"{nome} é menor de idade !!")
+
+    ```
+    Para lermos a entrada de dados a partir de um arquivo
+
+    ```python3
+
+    arq = 'notas.txt'
+    escrever_arquivo = open(arq, 'w', encoding='utf-8')
+
+    nota1 = input("entre a nota1 do aluno de zero a dez -> ")
+    nota2 = input("entre a nota2 do aluno de zero a dez -> ")
+    nota3 = input("entra a nota3 do aluno de zero a dez -> ")
+
+    print(nota1, nota2, nota3, sep=";", file=escrever_arquivo)
+
+    # Deve-se fechar o arquivo
+    escrever_arquivo.close()
+
+    arquivo_notas = open(arq, 'r', encoding='utf-8')
+    conteudo = arquivo_notas.read()
+    print(conteudo)
+    print(conteudo.split(sep=';'))
+    notas = conteudo.split(sep=';')
+    media = (float(notas[0]) + float(notas[1]) + float(notas[2])) / len(notas)
+    print(media)
+
+    # Fechar o arquivo no final
+    arquivo_notas.close()
+    ```
 
