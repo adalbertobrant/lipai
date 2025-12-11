@@ -266,4 +266,50 @@ for aluno in alunos:
         print(nota)
 
 ```
+## Exercícios de fixação
+
+### Ex01 
+```python3
+"""
+ex01.py
+○ Solicite ao usuário 3 números.
+○ Armazene os valores em uma lista.
+○ Ao final, apresente o menor e o maior elemento.
+
+"""
+lista = []
+CONTADOR = 0
+while CONTADOR < 3:
+    lista.append(int(input('Entre um valor para a lista -> ')))
+    CONTADOR += 1
+
+menor = maior = lista[0]
+
+for x in lista:
+    if x < menor:
+        menor = x
+    if x > maior:
+        maior = x
+
+print(f'O menor valor da lista {lista} é {menor}')
+
+print(f'O maior valor da lista {lista} é {maior}')
+```
+### Ex02
+```python3
+"""
+ex02.py
+○ Solicite ao usuário o mês do ano em formato numérico: 1, 2, 3, ..., 12.
+○ Apresente o nome do mês correspondente (ex.: entrada 3 → saída
+Março).
+○ Implementar usando uma Tupla (tuple).
+"""
+mes_ano = int(input("Entre o mês do ano -> "))
+
+meses = ("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro")
+if 1 <= mes_ano <= 12:
+    print(meses[mes_ano - 1])
+```
+### Ex03
 
