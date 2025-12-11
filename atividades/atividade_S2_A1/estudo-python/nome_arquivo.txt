@@ -1,3 +1,0 @@
-<_io.TextIOWrapper name='nome_arquivo.txt' mode='w' encoding='utf-8'>
-Saída de dados no arquivo -> <_io.TextIOWrapper name='nome_arquivo.txt' mode='w' encoding='utf-8'>
-
