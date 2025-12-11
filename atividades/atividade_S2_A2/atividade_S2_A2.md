@@ -504,9 +504,104 @@ if media < 4.0:
     print('Reprovado')
 ```
 
-## Ex03
+### Ex03
 ```python3
+""" Ex 03 - Crie um programa que solicite um identificador ao usuário e
+informe se é válido ou inválido
+○ o código identificador contém 7 caracteres;
+○ começa com BR;
+○ seguido de um número inteiro entre 0001 e 9999;
+○ por fim, termina com o caractere X.
+○ Exemplos válidos: BR0001X, BR1236X, BR9999X
+○ Exemplos inválidos: br0001X, BR126X, BR99999X, BR9999Y """
+
+identificador = input('Entre o identificador -> ')
+
+tamanho_identificador = len(identificador) == 7
+
+inicio_br = (identificador[0] == 'B' and identificador[1] == 'R')
+
+# verifica se os números são válidos
+
+QTD_INTEIROS = 4
+SOMA_INTEIROS = 0
+
+for i in range(2, 6):
+    if identificador[i] in '0123456789':
+        SOMA_INTEIROS += 1
+
+NUMERO_VALIDO = False
+
+if QTD_INTEIROS == SOMA_INTEIROS:
+    meio = identificador[2:6]
+    numero = int(meio)
+    NUMERO_VALIDO = 1 <= numero <= 9999
+
+x = identificador[-1] == 'X'
+
+if tamanho_identificador and inicio_br and NUMERO_VALIDO and x:
+    print(f'{identificador} é válido')
+else:
+    print(f'{identificador} não é válido')
+
 ```
 
+### Ex04
+```python3
+"""
+Ex 04 - Baseado no ex03.py, apresente todas as inconsistências
+do identificador informado usando uma lista de erros.
+"""
+
+identificador = input('Entre o identificador -> ')
+
+erros = []
+
+if len(identificador) != 7:
+    erros.append('O identificador não possui exatamente 7 caracteres.')
+
+if len(identificador) >= 2:
+    if not (identificador[0] == 'B' and identificador[1] == 'R'):
+        erros.append('O identificador não inicia com a sequência BR.')
+else:
+    erros.append('O identificador não inicia com a sequência BR.')
+
+if len(identificador) >= 6:
+    QTD_INTEIROS = 4
+    SOMA_INTEIROS = 0
+
+    for i in range(2, 6):
+        if identificador[i] in '0123456789':
+            SOMA_INTEIROS += 1
+
+    if QTD_INTEIROS == SOMA_INTEIROS:
+        meio = identificador[2:6]
+        numero = int(meio)
+        if not (1 <= numero <= 9999):
+            erros.append(
+                'O identificador não apresenta número inteiro entre 0001 e 9999.')
+    else:
+        erros.append(
+            'O identificador não apresenta número inteiro entre 0001 e 9999.')
+else:
+    erros.append(
+        'O identificador não apresenta número inteiro entre 0001 e 9999.')
+
+if len(identificador) >= 1:
+    if identificador[-1] != 'X':
+        erros.append('O identificador não finaliza com o caractere X.')
+else:
+    erros.append('O identificador não finaliza com o caractere X.')
+
+print()
+if len(erros) == 0:
+    print(f'{identificador} é válido')
+else:
+    print(f'{identificador} não é válido')
+    print('\nErros:')
+    for erro in erros:
+        print(f'# {erro}')
+
+```
 
 
