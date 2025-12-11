@@ -12,7 +12,7 @@ atividades educativas do Laboratório Interdisciplinar de Processamento e Análi
 |-------------------|------------------------------------|--------------|
 | Atividade 1       | [Acessar](https://github.com/adalbertobrant/lipai/blob/main/atividades/atividade_S1_A1/atividade_S1_A2.md)   |  Primeiro Contato com o Terminal Linux |
 | Atividade 2       | [Acessar](https://github.com/adalbertobrant/lipai/blob/main/atividades/atividade_S2_A1/atividade_S2_A1.md)   |  Atividade S2 A1  |
-| Atividade 3       | [Acessar](https://github.com/adalbertobrant/escoladanuvem/tree/main/atividade-03)   |  Estruturas de decisão (if, elif, else) |
+| Atividade 3       | [Acessar](https://github.com/adalbertobrant/lipai/tree/main/atividades/atividade_S2_A2)   |  Atividade S2 A2 |
 | Atividade 4       | [Acessar](https://github.com/adalbertobrant/escoladanuvem/tree/main/atividade-04)   |  Estruturas de repetição e try & except |
 | Atividade 5       | [Acessar](https://github.com/adalbertobrant/escoladanuvem/tree/main/atividade-05)   |  Funções em python |
 | Atividade 6       | [Acessar](https://github.com/adalbertobrant/escoladanuvem/tree/main/atividade-06)   |  Bibliotecas e API's |
