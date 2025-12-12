@@ -318,3 +318,26 @@ print(f'A soma de {N1} + {N2} + {N3} -> {somar_numeros(n2=N2, n1=N1, n3=N3)}')
 Demonstração do exercício 02
 ![Demonstração exercício 02](/home/adalberto/github/lipai/imgs/atividade_S2_A4/aula03-ex02.png)
 
+### Ex03
+```python3
+""" ex03.py: Crie uma função que recebe uma tupla de números como
+parâmetro (numeros) e retorna a soma desses números """
+
+
+def soma_tuplas(tuplas_numeros=()):
+    """ retorna a soma dos elementos da tupla """
+    somador_tupla = 0
+    for n in tuplas_numeros:
+        somador_tupla += n
+
+    return somador_tupla
+
+
+tuplas = (1, 2, 3, 4, 5, 6, 9, 100, -23, -45, 10, -34)
+
+print(
+    f'  A soma dos números na tupla -> {tuplas}\n  É de {soma_tuplas(tuplas)}')
+```
+![Demonstração exercício 03](/home/adalberto/github/lipai/imgs/atividade_S2_A4/aula03-ex03.png)
+
+
