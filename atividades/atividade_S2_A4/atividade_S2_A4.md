@@ -272,7 +272,7 @@ como parâmetro (n1, n2,n3) e imprime na saída padrão a soma dos números."""
 
 # declaração: função soma
 # recebe 3 números como parâmetros
-# returna a soma dos 3 números
+# imprime na saída padrão não tem retorno a função
 
 
 def soma(n1, n2, n3):
@@ -297,3 +297,24 @@ soma(N1, N2, N3)
 Demonstração do exercício 01
 
 ![Demonstração exercício 01](/home/adalberto/github/lipai/imgs/atividade_S2_A4/aula03-ex01.png)
+
+### Ex02
+```python3
+""" ex02.py: Crie uma função que recebe três números como parâmetro (n1, n2,
+n3) e retorna a soma dos números."""
+
+
+def somar_numeros(n1=0, n2=0, n3=0):
+    """ retorna a soma dos números n1,n2,n3 """
+    return n1+n2+n3
+
+
+N1 = 100
+N2 = 300
+N3 = -190
+
+print(f'A soma de {N1} + {N2} + {N3} -> {somar_numeros(n2=N2, n1=N1, n3=N3)}')
+```
+Demonstração do exercício 02
+![Demonstração exercício 02](/home/adalberto/github/lipai/imgs/atividade_S2_A4/aula03-ex02.png)
+
