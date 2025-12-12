@@ -11,8 +11,8 @@ atividades educativas do Laboratório Interdisciplinar de Processamento e Análi
 | Nome da Atividade | Link da Atividade                    | Descrição |
 |-------------------|------------------------------------|--------------|
 | Semana 1 | [Acessar](https://github.com/adalbertobrant/lipai/tree/main/atividades/semana1)   |  Primeiro Contato com o Terminal Linux |
-| Semana 2 | [Acessar](https://github.com/adalbertobrant/lipai/blob/main/atividades/atividade_S2_A1/atividade_S2_A1.md)   |  Atividade S2 A1  |
-| Semana 3 | [Acessar](https://github.com/adalbertobrant/lipai/tree/main/atividades/atividade_S2_A2)   |  Atividade S2 A2 |
+| Semana 2 | [Acessar](https://github.com/adalbertobrant/lipai/blob/main/atividades/semana2/README.md)   |  Atividades da semana 2  |
+| Semana 3 | [Acessar](https://github.com/adalbertobrant/lipai/tree/main/atividades/atividade_S2_A2)   |  Atividades da semana 3 |
 | Semana 4 | [Acessar](https://github.com/adalbertobrant/escoladanuvem/tree/main/atividade-04)   |  Estruturas de repetição e try & except |
 | Semana 5 | [Acessar](https://github.com/adalbertobrant/escoladanuvem/tree/main/atividade-05)   |  Funções em python |
 | Semana 6 | [Acessar](https://github.com/adalbertobrant/escoladanuvem/tree/main/atividade-06)   |  Bibliotecas e API's |
