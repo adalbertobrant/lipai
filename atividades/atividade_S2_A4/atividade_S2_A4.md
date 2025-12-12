@@ -368,12 +368,10 @@ print(
 usando as diretrizes da OMS. Restante do enunciado na folha de exercícios entregue no teams
 """
 
-
 def calcular_imc(individuo):
     """Retorna o IMC de um indivíduo com base na sua altura e peso."""
     altura, peso = individuo.values()
     return peso / (altura * altura)
-
 
 def obter_classificacao(imc):
     """Retorna a classificação com base no IMC."""
@@ -390,7 +388,6 @@ def obter_classificacao(imc):
             return classificacao
     return None
 
-
 def situacao_individuo(imc):
     """Retorna 'normal', 'perder peso' ou 'ganhar peso' usando dicionário de intervalos."""
     pesos = {
@@ -403,7 +400,6 @@ def situacao_individuo(imc):
         if minimo <= imc <= maximo:
             return indicacao
     return None
-
 
 # Entrada de dados pelo usuário
 altura = float(input('Digite a sua altura -> '))
