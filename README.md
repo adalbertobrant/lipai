@@ -4,7 +4,7 @@ atividades educativas do Laboratório Interdisciplinar de Processamento e Análi
 # Atividades Laboratório INterdisciplinar de Processamento e Análise de Imagens - LIPAI - UFU
 ## Atividades iniciais
 
-. Os módulos estão separados por diretório com o nome das atividades
+ As atividades foram reorganizadas para refletir as semanas que foram realizadas no perído de estudo do curso.
 
 
 
