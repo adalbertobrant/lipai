@@ -55,7 +55,7 @@ Ao criar o comando breakpoint() no Python, abre-se a possibilidade de conseguir 
 
 https://github.com/adalbertobrant/lipai/tree/main/imgs/atividade_S3_A1
 
-![Comando breakpoint()](./imgs/atividade_S3_A1/lista_comandos_pdb.png)
+![Comando breakpoint()](../../../imgs/atividade_S3_A1/lista_comandos_pdb.png)
 
 O comando breakpoint é uma função em python que ajuda a fazer o debug do código , na figura vemos o comando breakpoint() na linha 17 e a chamada do comando help no terminal pdb 
 
