@@ -53,17 +53,16 @@ Ao criar o comando breakpoint() no Python, abre-se a possibilidade de conseguir 
 
 ```
 
-https://github.com/adalbertobrant/lipai/tree/main/imgs/atividade_S3_A1
 
 ![Comando breakpoint()](../../../imgs/atividade_S3_A1/lista_comandos_pdb.png)
 
 O comando breakpoint é uma função em python que ajuda a fazer o debug do código , na figura vemos o comando breakpoint() na linha 17 e a chamada do comando help no terminal pdb 
 
-![Comando next](./imgs/atividade_S3_A1/comando_next_pdb.png)
+![Comando next](../../../imgs/atividade_S3_A1/comando_next_pdb.png)
 
 O comando next do pdb ajuda a ver linha a linha a execução do programa , pois o mesmo é executado linha a linha, após ser executada uma variável pode-se chamar a mesma para ver o seu valor 
 
-![Comando step e where](./imgs/atividade_S3_A1/lista_comandos_pdb_step_where.png)
+![Comando step e where](../../../imgs/atividade_S3_A1/lista_comandos_pdb_step_where.png)
 
 O comando step entra dentro de uma função e é usado em conjunto com o comando next , o comando where mostra a pilha de execução apontando a linha do programa principal, e depois a sua chamada de função como mostra a figura acima
 
