@@ -81,4 +81,52 @@ print(retangulo2.base, retangulo2.altura)
 print(f"Área retangulo 1 -> {retangulo1.calcular_area()}")
 print(f"Área retangulo 2 -> {retangulo2.calcular_area()}")
 ```
+## Aula 02 - Atributos de classe e instância
+
+   Atributos de instância são atributos que associamos a um objeto específico 
+   Atibutos de Classes está associado a classe do objeto e normalmente são valores já definidos, o acesso ao atributo de classe é feito usando o nome da classe e a variável ou então no objeto criado e a variável da classe.
+   Caso o atributo de classe seja mudado na instância ele é refletido apenas na instância criada.
+```python3
+""" Aula 02 - Atributos de classe e instância """
+
+
+class Pessoa:
+    """ Classe Pessoa """
+
+    # atributo de classe
+    especie = 'Humano'
+
+    def __init__(self, nome, email):
+        """ atributos de instância: nome , email """
+        self.nome = nome
+        self.email = email
+
+
+pessoa1 = Pessoa('Maria da Silva', 'maria@email.com')
+pessoa2 = Pessoa('João Santos', 'joao@email.com')
+
+# imprimir dados da Pessoa
+print(pessoa1.nome, pessoa1.email)
+print(pessoa2.nome, pessoa2.email)
+print('------')
+# dados da pessoa com atributo de classe
+print(pessoa1.nome, pessoa1.email, pessoa1.especie)
+print(pessoa2.nome, pessoa2.email, pessoa2.especie)
+print('------')
+# dados de atributo de classe acessando a classe
+print(Pessoa.especie)
+print('------')
+# alterar um atributo de classe na instância (objeto) altera somente para aquela instância
+print("Alterando pessoa1.especie para alien")
+pessoa1.especie = 'Alien'
+print(pessoa1.nome, pessoa1.email, pessoa1.especie)
+print('------')
+# alterar um atributo de classe na classe altera para todos os objetos e na classe também.
+# desde que aquela instância gerada não tenha sido alterada anteriormente.
+Pessoa.especie = "Anunakis"
+print(pessoa1.nome, pessoa1.email, pessoa1.especie)
+print(pessoa2.nome, pessoa2.email, pessoa2.especie)
+```
+![Alterando atributos de classe](../../../imgs/atividade_S3_A3/aula02-001.png)
+   A figura mostra a alteração do atributo de classe note que a pessoa1 manteve o atributo anteriormente designado a ela.
 
