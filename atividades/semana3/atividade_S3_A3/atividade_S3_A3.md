@@ -362,3 +362,145 @@ print(type(retangulo2))
     O eval é uma função que serve para executar um código python, ela é muito poderosa trazendo muita responsabilidade ao programador, entretanto pode ser útil em casos especiais.
     A função repr() retorna o objeto canônico criado por def __repr__(self).
 
+## Aula 06 - equal e hash code
+
+```python3
+""" Aula 06 - equal e hash code """
+
+# Tanto em python quanto em outras linguagens temos formas de comparação
+
+NOME1 = 'João'
+NOME2 = 'João'
+
+# avalia se duas strings são verdadeiras
+print(NOME1 == NOME2)
+
+
+class Pessoa():
+    """ Cria um objeto da classe pessoa """
+
+    def __init__(self, nome):
+        """ construtor da classe pessoa com nome como parametro"""
+        self.nome = nome
+
+
+pessoa1 = Pessoa('João')
+pessoa2 = Pessoa('João')
+
+# comparação entre pessoa1 e pessoa2
+print(pessoa1 == pessoa2)
+
+print(pessoa1)
+print(pessoa2)
+
+```
+Figura 1 mostra a comparação entre duas strings com conteúdo iguais , dando verdadeiro.
+![Duas strings nome1 e nome2 com conteúdo iguais](../../../imgs/atividade_S3_A3/aula06-001.png)
+
+Na figura 2 temos que a construção de um objeto pessoa1 possui um endereço de memória específico
+![Endereço de memória pessoa1](../../../imgs/atividade_S3_A3/aula06-002.png)
+
+E na figura 3 observamos que apesar do conteúdo ou seja o nome das pessoa1 ser igual ao nome da pessoa2 a comparação utilizando o ' == ' mostra dois endereços de memória diferentes, retornando a opção false no python
+![Comparação entre objetos](../../../imgs/atividade_S3_A3/aula06-003.png)
+
+    Para utilizarmos uma comparação da forma que comparamos entre duas strings, devemos sobreescrever o método __eq , definido em python.
+```python3
+""" Aula 06 - equal e hash code """
+
+
+class Pessoa():
+    """ Cria um objeto da classe pessoa """
+
+    def __init__(self, cpf, nome):
+        """ construtor da classe pessoa com nome como parametro"""
+        self.cpf = cpf
+        self.nome = nome
+
+    def __eq__(self, value):
+        """ retorna verdadeiro ou falso para certo value """
+        if isinstance(value, self.__class__):
+            return self.cpf == value.cpf
+
+        return False
+
+
+pessoa1 = Pessoa('123456890-11', 'João')
+pessoa2 = Pessoa('123321123-11', 'João')
+
+# comparação entre pessoa1 e pessoa2
+print(pessoa1 == pessoa2)
+```
+![Método __eq__()](../../../imgs/atividade_S3_A3/aula06-004.png)
+   A figura nos mostra que sobreescrevendo o método __eq__() o python interpreta o sinal ' == ' da forma esperada, isso vai ser importante ao fazermos análise de coleções no python.
+
+   Ao termos um conjunto de dados em python, digamos um set da Classe Pessoa, chamado de pessoas, é importante já termos definido como será a comparação, visto que os sets são elementos que nesse caso são objetos que não podem ser iguais veja o exemplo abaixo:
+```python3
+```
+   Nesse exemplo percebemos o seguinte erro ao executarmos o programa:
+![Erro hashable](../../../imgs/atividade_S3_A3/aula06-005.png)
+
+   O erro de unshable type 'Pessoa' ocorre, pois ainda não definimos no nosso código como o compilador python deve interpretar um conjunto de objetos pessoa, então ele declara que não se tem um hash para o objeto, devemos proceder a sobreescrita do método ____hash____(), como no código abaixo:
+```python3
+def __hash__(self):
+        """ retorna o hash do atributo escolhido """
+        return hash(self.cpf)
+```
+   Ao executarmos o código completo, percebemos que o set é impresso na tela de forma adequada, removendo o elemento que está repetido, segundo os parâmetros estabelecidos no método ____eq____():
+![Set hashable](../../../imgs/atividade_S3_A3/aula06-006.png)
+
+   Ao usarmos a impressão de sets, precisamos de passar a forma canônica para a tela o mesmo não ocorre caso a nossa coleção seja por exemplo uma lista, como na figura abaixo:
+![Lista de pessoas](../../../imgs/atividade_S3_A3/aula06-007.png)
+
+   Observe que devemos para a lista usar o método ____str____(), como no código abaixo:
+```python3
+""" Aula 06 - equal e hash code """
+
+
+class Pessoa():
+    """ Cria um objeto da classe pessoa """
+
+    def __init__(self, cpf, nome):
+        """ construtor da classe pessoa com nome como parametro"""
+        self.cpf = cpf
+        self.nome = nome
+
+    def __eq__(self, value):
+        """ retorna verdadeiro ou falso para certo value """
+        if isinstance(value, self.__class__):
+            return self.cpf == value.cpf
+
+        return False
+
+    def __hash__(self):
+        """ retorna o hash do atributo escolhido """
+        return hash(self.cpf)
+
+    def __repr__(self):
+        """retorna o objeto em sua forma canônica """
+        return f'Pessoa({self.cpf}, {self.nome})'
+
+    def __str__(self):
+        """ retorna o objeto em sua forma de string """
+        return f'Pessoa[cpf={self.cpf}, nome={self.nome}]'
+
+
+pessoa1 = Pessoa('123456890-11', 'João')
+pessoa2 = Pessoa('123321123-11', 'João')
+# pessoa3 tem os mesmos valores de pessoa2
+pessoa3 = Pessoa('123321123-11', 'João')
+
+pessoas = {pessoa1, pessoa2, pessoa3}
+
+# imprime o set pessoas
+print()
+print(pessoas)
+print()
+
+# imprime a lista de pessoas
+lista_pessoas = [pessoa1, pessoa2, pessoa3]
+
+print()
+print(lista_pessoas)
+print()
+```
+
