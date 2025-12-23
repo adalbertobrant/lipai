@@ -503,4 +503,5 @@ print()
 print(lista_pessoas)
 print()
 ```
+    Se utilizarmos o método count ( elemento_a_ser_contado ) para contarmos a quantidade de lista_pessoas em nossa lista, escolhendo por exemplo a pessoa2, teremos como retorno do método de contagem a quantidade de 2, isso indica que o método count avaliada os atributos de cada objeto seguindo a regra estabelecida pelo método sobreescrito ____eq___().
 
