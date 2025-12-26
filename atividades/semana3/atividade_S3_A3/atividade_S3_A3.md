@@ -692,3 +692,167 @@ pessoa1.print_enderecos()
 pessoa3.print_enderecos()
 ```
 ![Imprimindo endereços com um método print_enderecos()](../../../imgs/atividade_S3_A3/aula07-002.png)
+
+## Aula 08 - Herança entre classes super()
+
+    Reaproveitamento de código pode ser feito utilizando herança.
+    Com a herança podemos realizar o relacionamento entre diferentes classes permitindo aproveitar os métodos e atributos de uma classe em outra classe.
+    De maneira geral temos a super classe que é considerada a classe principal e as subclasses que herdam os métodos e atributos da super classe.
+    No exemplo abaixo, definimos uma classe Pessoa(), e duas classes que herdam atributos e métodos da classe Pessoa(), note que nada foi escrito a não ser a definição da classe e sua herança.
+```python3
+""" Aula 08 - Herança entre classes super() """
+
+
+class Pessoa():
+    """ Define uma classe pessoa com oa atributos, cpf, nome , sobrenome """
+
+    def __init__(self, nome, sobrenome, cpf):
+        """ Construtor da classe com nome, sobrenome e cpf """
+        self.nome = nome
+        self.sobrenome = sobrenome
+        self.cpf = cpf
+
+    def obtem_nome_completo(self):
+        """ retorna o nome completo da pessoa """
+        return f'{self.nome} {self.sobrenome}'
+
+
+class Cliente(Pessoa):
+    """ Classe cliente feita usando herança """
+
+
+class Funcionario(Pessoa):
+    """ Classe Funcionario que herda informações da classe pessoa """
+
+
+cliente = Cliente("João", "da Silva", "111.111.111-11")
+
+print(cliente.obtem_nome_completo())
+
+funcionario = Funcionario("Maria", "da Silva", "222.222.222-22")
+
+print(funcionario.obtem_nome_completo())
+```
+![Classe cliente() e funcionario() herdam da classe Pessoa()](../../../imgs/atividade_S3_A3/aula08-001.png)
+   Ao fazermos herança entre as classes na definição da classe passamos a classe que queremos herdar os atributos e métodos.
+
+   Se quisermos que nossas classes herdadas recebam novos atributos, devemos definir um método construtor de objeto específico para aquela classe, com a definição de um método que irá referenciar a super classe, isso pode ser feito através do método super().Veja o exemplo do código abaixo e sua execução:
+```python3
+""" Aula 08 - Herança entre classes super() """
+
+
+class Pessoa():  # SUPER CLASSE
+    """ Define uma classe pessoa com oa atributos, cpf, nome , sobrenome """
+
+    def __init__(self, nome, sobrenome, cpf):
+        """ Construtor da classe com nome, sobrenome e cpf """
+        self.nome = nome
+        self.sobrenome = sobrenome
+        self.cpf = cpf
+
+    def obtem_nome_completo(self):
+        """ retorna o nome completo da pessoa """
+        return f'{self.nome} {self.sobrenome}'
+
+
+class Cliente(Pessoa):  # SUB CLASSE
+    """ Classe cliente feita usando herança """
+
+    def __init__(self, nome, sobrenome, cpf):
+        """ método construtor da sub classe cliente """
+        super().__init__(nome, sobrenome, cpf)
+        self.compras = []
+
+
+class Funcionario(Pessoa):
+    """ Classe Funcionario que herda informações da classe pessoa """
+
+    def __init__(self, nome, sobrenome, cpf, salario):
+        """ método construtor do objeto funcionario com o salário """
+        super().__init__(nome, sobrenome, cpf)
+        self.salario = salario
+
+
+cliente = Cliente("João", "da Silva", "111.111.111-11")
+
+print(cliente.obtem_nome_completo(), type(cliente))
+
+funcionario = Funcionario("Maria", "da Silva", "222.222.222-22", 2000.45)
+
+print(funcionario.obtem_nome_completo(),
+      funcionario.salario, type(funcionario))
+```
+![tanto a classe cliente() quanto a funcionario() tem o super()](../../../imgs/atividade_S3_A3/aula08-002.png)
+    O super() indica dentro do construtor que devemos pegar os atributos ali referenciados na classe principal que nesse caso é Pessoa()
+    A construção fica então dessa forma -> **super().____init____(atributos...)
+    O super() também pode ser utilizado para herdar métodos de outras classes facilitando a criação de métodos com detalhes específicos para uma determinada classe herdada.
+```python3
+""" Aula 08 - Herança entre classes super() """
+
+
+class Pessoa():  # SUPER CLASSE
+    """ Define uma classe pessoa com oa atributos, cpf, nome , sobrenome """
+
+    def __init__(self, nome, sobrenome, cpf):
+        """ Construtor da classe com nome, sobrenome e cpf """
+        self.nome = nome
+        self.sobrenome = sobrenome
+        self.cpf = cpf
+
+    def obtem_nome_completo(self):
+        """ retorna o nome completo da pessoa """
+        return f'{self.nome} {self.sobrenome}'
+
+
+class Cliente(Pessoa):  # SUB CLASSE
+    """ Classe cliente feita usando herança """
+
+    def __init__(self, nome, sobrenome, cpf):
+        """ método construtor da sub classe cliente """
+        super().__init__(nome, sobrenome, cpf)
+        self.compras = []
+
+
+class Funcionario(Pessoa):
+    """ Classe Funcionario que herda informações da classe pessoa """
+
+    def __init__(self, nome, sobrenome, cpf, salario):
+        """ método construtor do objeto funcionario com o salário """
+        super().__init__(nome, sobrenome, cpf)
+        self.salario = salario
+
+    def calcula_pagamento(self):
+        """ método de cálculo de pagamento do funcionário """
+        return self.salario - self.salario * 0.1
+
+
+class Programador(Funcionario):
+    """ Classe progamador """
+
+    def __init__(self, nome, sobrenome, cpf, salario, bonus):
+        """ construtor da classe programador"""
+        super().__init__(nome, sobrenome, cpf, salario)
+        self.bonus = bonus
+
+    def calcula_pagamento(self):
+        """ método para o cálculo de salário do programador com o bonus usando super() """
+        return super().calcula_pagamento() + self.bonus
+
+
+cliente = Cliente("João", "da Silva", "111.111.111-11")
+
+print(cliente.obtem_nome_completo(), type(cliente))
+
+funcionario = Funcionario("Maria", "da Silva", "222.222.222-22", 2000.45)
+
+print(funcionario.obtem_nome_completo(), funcionario.calcula_pagamento(),
+      funcionario.salario, type(funcionario))
+
+prog = Programador("José", "Lopes da Silva", "333.333.333-33", 5000.00, 300.00)
+
+print(prog.obtem_nome_completo())
+print(prog.calcula_pagamento())
+print(type(prog))
+```
+   Percebemos que o método calcula_pagamento(self) da nova classe programador está utilizando o super() para fazer parte do seu cálculo de pagamentos, retornando sempre o salário com desconto mais o bonus.
+
