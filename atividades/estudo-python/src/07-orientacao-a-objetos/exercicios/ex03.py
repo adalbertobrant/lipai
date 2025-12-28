@@ -42,26 +42,25 @@ class Participacao:
         return f'Participacao [ codigo={self.codigo}, data_inicio={self.data_inicio}, data_fim={self.data_fim}, \n  {self.aluno}, \n  {self.projeto}]'
 
 
-# teste 01
-print('\n----- Início do Teste Classe Participacao ----\n')
-DATA = '1234 ; "01-10-2025" ; "29-12-2026" ; "SP001, José da Silva, josé@email.com" ; "2, Laboratório de IA, Maria Silva"'
+if __name__ == "__main__":
+    # teste 01
+    print('\n----- Início do Teste Classe Participacao ----\n')
+    DATA = '1234 ; "01-10-2025" ; "29-12-2026" ; "SP001, José da Silva, josé@email.com" ; "2, Laboratório de IA, Maria Silva"'
 
-try:
-    participacao = Participacao.criar_participacao(DATA)
-    print(participacao)
-except Exception as e:
-    print(e)
+    try:
+        participacao = Participacao.criar_participacao(DATA)
+        print(participacao)
+    except Exception as e:
+        print(e)
 
-# teste 02
-# --- TESTE 02: SIMULAÇÃO DE ERRO ---
+    # teste 02
 
-print("\n--- Iniciando Teste 02 (Deve retornar erro) ---")
+    print("\n--- Iniciando Teste 02 (Deve retornar erro) ---")
 
-DATA_ERRO = '9999;"01-01-2024";"30-06-2024";"SP002, Aluno Sem Email";"3, Projeto X, Prof. Girafales"'
+    DATA_ERRO = '9999;"01-01-2024";"30-06-2024";"SP002, Aluno Sem Email";"3, Projeto X, Prof. Girafales"'
 
-try:
-    participacao_erro = Participacao.criar_participacao(DATA_ERRO)
-    print(participacao_erro)
-
-except ValueError as e:
-    print(f"Mensagem de erro capturada: {e}")
+    try:
+        participacao_erro = Participacao.criar_participacao(DATA_ERRO)
+        print(participacao_erro)
+    except ValueError as e:
+        print(f"Mensagem de erro capturada: {e}")
