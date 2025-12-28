@@ -79,31 +79,31 @@ class Projeto:
         return f'Projeto [Código: {self.codigo}, Título: "{self.titulo}", Responsável: {self.responsavel}]'
 
 
-print('-----\nTestes do Projeto\n----')
+if __name__ == "__main__":
+    print('-----\nTestes do Projeto\n----')
+    # 1. Teste normal (Construtor)
+    try:
+        p1 = Projeto(1, 'Lab Software', 'Pedro Gomes')
+        print(f"P1 criado: {p1}")
+    except ValueError as e:
+        print(f"Erro P1: {e}")
 
-# 1. Teste normal (Construtor)
-try:
-    p1 = Projeto(1, 'Lab Software', 'Pedro Gomes')
-    print(f"P1 criado: {p1}")
-except ValueError as e:
-    print(f"Erro P1: {e}")
+    # 2. Teste via String
+    try:
+        entrada = "2, Laboratório de IA, Maria Silva"
+        p2 = Projeto.criar_projeto(entrada)
+        print(f"P2 criado via string: {p2}")
+    except ValueError as e:
+        print(f"Erro P2: {e}")
 
-# 2. Teste via String
-try:
-    entrada = "2, Laboratório de IA, Maria Silva"
-    p2 = Projeto.criar_projeto(entrada)
-    print(f"P2 criado via string: {p2}")
-except ValueError as e:
-    print(f"Erro P2: {e}")
+    # 3. Teste de Igualdade
+    p3 = Projeto(1, "Outro Nome", "Outra Pessoa")  # Mesmo código que P1
+    print(f"P1 é igual a P3 (mesmo código) ?  {p1 == p3}")  # Deve ser True
 
-# 3. Teste de Igualdade
-p3 = Projeto(1, "Outro Nome", "Outra Pessoa")  # Mesmo código que P1
-print(f"P1 é igual a P3 (mesmo código) ?  {p1 == p3}")  # Deve ser True
+    # 4. Teste de Erro (Título Vazio)
+    try:
+        p_erro = Projeto(3, "", "Joao")
+    except ValueError as e:
+        print(f"Erro esperado capturado: {e}")
 
-# 4. Teste de Erro (Título Vazio)
-try:
-    p_erro = Projeto(3, "", "Joao")
-except ValueError as e:
-    print(f"Erro esperado capturado: {e}")
-
-print('----')
+    print('----')
