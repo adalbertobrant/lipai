@@ -86,9 +86,10 @@ class Aluno():
         return f"Aluno [ prontuario = {self.prontuario}, nome = {self.nome}, email = {self.email}]"
 
 
-aluno1 = Aluno('sp001', 'José da Silva', 'jose@email.com')
-print(aluno1)
-print('----')
+if __name__ == "__main__":
+    aluno1 = Aluno('sp001', 'José da Silva', 'jose@email.com')
+    print(aluno1)
+    print('----')
 
-aluno2 = Aluno.criar_de_string("SP30394, Maria Silva, maria@ufu.br")
-print(aluno2)
+    aluno2 = Aluno.criar_de_string("SP30394, Maria Silva, maria@ufu.br")
+    print(aluno2)
