@@ -14,6 +14,5 @@ atividades educativas do Laboratório Interdisciplinar de Processamento e Análi
 | Semana 2 | [Acessar](https://github.com/adalbertobrant/lipai/blob/main/atividades/semana2/README.md)   |  Atividades da semana 2  |
 | Semana 3 | [Acessar](https://github.com/adalbertobrant/lipai/tree/main/atividades/semana3/README.md)   |  Atividades da semana 3 |
 | Semana 4 | [Acessar](https://github.com/adalbertobrant/lipai/tree/main/atividades/semana4/README.md)   |  Atividades da semana 4 |
-| Semana 5 | [Acessar](https://github.com/adalbertobrant/escoladanuvem/tree/main/atividade-05)   |  Funções em python |
-| Semana 6 | [Acessar](https://github.com/adalbertobrant/escoladanuvem/tree/main/atividade-06)   |  Bibliotecas e API's |
-| Semana 7 | [Acessar](https://github.com/adalbertobrant/escoladanuvem/tree/main/atividade-07)   |  Leitura de arquivos CSV, JSON |
+| Semana 5 | [Acessar]()   |    |
+
