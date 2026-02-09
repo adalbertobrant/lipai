@@ -39,4 +39,8 @@ Arquivos de dados
 ● data/usuarios.csv
 ● data/tecnicos.csv
 ● data/chamados.csv
-  data/setores.csv
+●  data/setores.csv
+
+
+
+[ Link projeto -j ] (https://github.com/adalbertobrant/lipai/tree/main/atividades/semana4/projeto-j) | PROJETO - J |
