@@ -1,0 +1,50 @@
+Roteiro de Teste - Usuário Comum
+
+Objetivo: Verificar as funcionalidades disponíveis para um usuário comum do sistema de chamados.
+
+Pré-requisitos:
+- O sistema deve estar rodando (executar `python3 main.py` na pasta `semana4/projeto-j`).
+- Devem existir usuários de acesso cadastrados com a função "user" em `data/senhas.csv` (ex: `alice_user,alicepass,user,11122233344`).
+- Deve existir pelo menos um setor cadastrado em `data/setores.csv` (ex: `1,TI,1`).
+- O usuário `alice_user` deve ter o CPF `11122233344` associado e este CPF deve existir em `data/usuarios.csv`.
+
+Passos:
+
+1.  **Iniciar o Sistema e Fazer Login:**
+    *   Execute o sistema (`python3 main.py`).
+    *   Na tela de login, insira as credenciais de um usuário comum:
+        *   Usuário: `alice_user`
+        *   Senha: `alicepass`
+    *   Verifique se o login é bem-sucedido e se o menu principal do usuário comum é exibido (opções "Gerenciar Meus Chamados", "Meus Relatórios", "Sair").
+
+2.  **Abrir um Novo Chamado:**
+    *   No menu principal do usuário, selecione a opção **1. Gerenciar Meus Chamados**.
+    *   No "Menu Chamados" (usuário), selecione a opção **1. Abrir Chamado**.
+    *   Preencha os detalhes do chamado:
+        *   Título: `Problema com o teclado`
+        *   Descrição: `Algumas teclas não funcionam.`
+        *   O sistema exibirá uma lista de setores. Selecione o número correspondente a um setor válido (ex: `1` para TI).
+        *   Prioridade (baixa, media, alta): `media`
+    *   Verifique se o chamado é aberto com sucesso e se o ID do chamado gerado é exibido.
+
+3.  **Listar Meus Chamados:**
+    *   Ainda no "Menu Chamados" (usuário), selecione a opção **2. Listar Meus Chamados**.
+    *   Verifique se o chamado que você acabou de abrir, e quaisquer outros chamados associados ao seu CPF, são listados corretamente.
+
+4.  **Ver Status de um Chamado:**
+    *   Ainda no "Menu Chamados" (usuário), selecione a opção **3. Ver Status de um Chamado**.
+    *   O sistema exibirá uma lista dos seus chamados. Selecione o número correspondente ao chamado que você abriu no passo 2.
+    *   Verifique se o ID, Título, Status e Prioridade do chamado selecionado são exibidos corretamente.
+
+5.  **Acessar Meus Relatórios:**
+    *   Volte ao menu principal do usuário (selecione `0. Voltar` no "Menu Chamados").
+    *   No menu principal, selecione a opção **2. Meus Relatórios**.
+    *   No "Menu Relatórios" (usuário), selecione a opção **1. Listar Meus Chamados Abertos**.
+    *   Verifique se apenas os seus chamados com status "aberto" são listados.
+    *   Selecione a opção **2. Listar Todos os Meus Chamados**.
+    *   Verifique se todos os seus chamados (abertos, em atendimento, etc.) são listados.
+    *   Volte ao menu principal do usuário (selecione `0. Voltar`).
+
+6.  **Sair do Sistema:**
+    *   No menu principal do usuário, selecione a opção **0. Sair**.
+    *   Verifique se o sistema encerra corretamente.

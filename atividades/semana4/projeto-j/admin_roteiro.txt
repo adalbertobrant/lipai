@@ -1,0 +1,94 @@
+Roteiro de Teste - Administrador
+
+Objetivo: Verificar as funcionalidades completas disponíveis para um administrador do sistema de chamados.
+
+Pré-requisitos:
+- O sistema deve estar rodando (executar `python3 main.py` na pasta `semana4/projeto-j`).
+- O usuário de acesso "admin" deve estar cadastrado em `data/senhas.csv` (ex: `admin,adminpass,admin,`).
+- Devem existir alguns setores e técnicos cadastrados em seus respectivos CSVs para testar a seleção.
+
+Passos:
+
+1.  **Iniciar o Sistema e Fazer Login:**
+    *   Execute o sistema (`python3 main.py`).
+    *   Na tela de login, insira as credenciais do administrador:
+        *   Usuário: `admin`
+        *   Senha: `adminpass`
+    *   Verifique se o login é bem-sucedido e se o menu principal do administrador é exibido (todas as opções: "Gerenciar Usuários", "Gerenciar Técnicos", "Gerenciar Setores", "Gerenciar Chamados (Admin)", "Relatórios (Admin)", "Gerenciar Usuários de Acesso", "Sair").
+
+2.  **Gerenciar Usuários de Acesso:**
+    *   No menu principal do administrador, selecione a opção **6. Gerenciar Usuários de Acesso**.
+    *   Selecione **2. Listar Usuários de Acesso** para ver as contas existentes.
+    *   Selecione **1. Cadastrar Novo Usuário de Acesso**:
+        *   Nome de Usuário: `new_admin`
+        *   Senha: `admin123`
+        *   Função: `admin`
+        *   CPF associado: (deixe em branco)
+    *   Liste novamente os usuários de acesso para confirmar o cadastro.
+    *   Volte ao menu principal (selecione `0. Voltar`).
+
+3.  **Gerenciar Setores (Cadastrar e Listar):**
+    *   No menu principal do administrador, selecione a opção **3. Gerenciar Setores**.
+    *   Selecione **1. Cadastrar Setor**:
+        *   Nome: `Recursos Humanos`
+        *   ID do Gestor: `1` (insira um ID numérico)
+    *   Verifique se o setor é cadastrado com um ID gerado automaticamente.
+    *   Selecione **2. Listar Setores** para confirmar o novo setor.
+    *   Volte ao menu principal (selecione `0. Voltar`).
+
+4.  **Gerenciar Técnicos (Cadastrar e Listar):**
+    *   No menu principal do administrador, selecione a opção **2. Gerenciar Técnicos**.
+    *   Selecione **1. Cadastrar Técnico**:
+        *   Nome: `Tecnico Teste`
+        *   Email: `tecnico.teste@example.com`
+        *   Especialidade: `Redes`
+    *   Verifique se o técnico é cadastrado com um ID gerado automaticamente.
+    *   Selecione **2. Listar Técnicos** para confirmar o novo técnico.
+    *   Volte ao menu principal (selecione `0. Voltar`).
+
+5.  **Gerenciar Usuários (Cadastrar e Listar):**
+    *   No menu principal do administrador, selecione a opção **1. Gerenciar Usuários**.
+    *   Selecione **1. Cadastrar Usuário**:
+        *   CPF: `44455566677` (deve ser único)
+        *   Nome: `Novo Usuário`
+        *   Email: `novo.usuario@example.com`
+        *   O sistema exibirá uma lista de setores. Selecione o número correspondente ao setor "Recursos Humanos" (ou outro que você cadastrou).
+    *   Verifique se o usuário é cadastrado.
+    *   Selecione **2. Listar Usuários** para confirmar o novo usuário.
+    *   Volte ao menu principal (selecione `0. Voltar`).
+
+6.  **Gerenciar Chamados (Admin - Abrir, Atribuir, Atualizar Status):**
+    *   No menu principal do administrador, selecione a opção **4. Gerenciar Chamados (Admin)**.
+    *   Selecione **1. Abrir Chamado**:
+        *   O sistema exibirá uma lista de usuários. Selecione o número correspondente ao `Novo Usuário` (CPF: `44455566677`).
+        *   Título: `Computador lento`
+        *   Descrição: `Meu computador está muito lento.`
+        *   O sistema exibirá uma lista de setores. Selecione o número correspondente ao setor "Recursos Humanos".
+        *   Prioridade: `alta`
+    *   Verifique se o chamado é aberto com um ID gerado automaticamente.
+    *   Selecione **2. Atribuir Técnico**:
+        *   O sistema exibirá uma lista de chamados. Selecione o número correspondente ao chamado "Computador lento".
+        *   O sistema exibirá uma lista de técnicos. Selecione o número correspondente ao `Tecnico Teste`.
+    *   Verifique se o técnico é atribuído e o status do chamado muda para "em atendimento".
+    *   Selecione **3. Atualizar Status**:
+        *   O sistema exibirá uma lista de chamados. Selecione o número correspondente ao chamado "Computador lento".
+        *   Novo Status: `resolvido`
+    *   Verifique se o status é atualizado para "resolvido" e a data de fechamento é registrada.
+    *   Selecione **4. Listar Todos os Chamados** para ver todos os chamados e confirmar as alterações.
+    *   Volte ao menu principal (selecione `0. Voltar`).
+
+7.  **Acessar Relatórios (Admin):**
+    *   No menu principal do administrador, selecione a opção **5. Relatórios (Admin)**.
+    *   Selecione **1. Listar Chamados Abertos**:
+        *   Verifique se apenas chamados com status "aberto" são listados.
+    *   Selecione **2. Listar Chamados por Usuário**:
+        *   O sistema exibirá uma lista de usuários. Selecione o número correspondente ao `Novo Usuário` (CPF: `44455566677`).
+        *   Verifique se apenas os chamados desse usuário são listados.
+    *   Selecione **3. Listar Chamados por Técnico**:
+        *   O sistema exibirá uma lista de técnicos. Selecione o número correspondente ao `Tecnico Teste`.
+        *   Verifique se apenas os chamados atribuídos a esse técnico são listados.
+    *   Volte ao menu principal (selecione `0. Voltar`).
+
+8.  **Sair do Sistema:**
+    *   No menu principal do administrador, selecione a opção **0. Sair**.
+    *   Verifique se o sistema encerra corretamente.

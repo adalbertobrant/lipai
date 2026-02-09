@@ -1,0 +1,5 @@
+Relatório de Erros - Teste de Funcionalidades
+Data: 2026-02-06
+
+Nenhum erro ou comportamento inesperado foi encontrado durante o processo de teste guiado.
+As funcionalidades de login, controle de acesso baseado em funções (administrador e usuário comum), gerenciamento de credenciais de acesso, abertura e listagem de chamados funcionaram conforme o esperado.
